@@ -10,7 +10,11 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       body: SafeArea(child: BlocBuilder<PokeBloc, PokeState>(
         builder: (context, state) {
-          if (state is PokeLoading) {
+          if (state is PokeInitial) {
+            return const Center(
+              child: CircularProgressIndicator(),
+            );
+          } else if (state is PokeLoading) {
             return const Center(
               child: CircularProgressIndicator(),
             );

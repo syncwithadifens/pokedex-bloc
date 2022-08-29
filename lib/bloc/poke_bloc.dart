@@ -11,8 +11,15 @@ class PokeBloc extends Bloc<PokeEvent, PokeState> {
   PokeBloc() : super(PokeInitial()) {
     on<PokeEvent>((event, emit) async {
       // TODO: implement event handler
-      var pokemon = await httpService.getPokeList();
-      emit(PokeLoaded(pokedata: pokemon));
+      if (event is GetListPokeEvent) {
+        emit(PokeLoading());
+        try {
+          var result = await httpService.getPokeList();
+          emit(PokeLoaded(pokedata: result));
+        } catch (e) {
+          emit(PokeError());
+        }
+      }
     });
   }
 }

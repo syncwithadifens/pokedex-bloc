@@ -7,13 +7,22 @@ abstract class PokeState extends Equatable {
   List<Object> get props => [];
 }
 
-class PokeInitial extends PokeState {}
+class PokeInitial extends PokeState {
+  @override
+  List<Object> get props => [];
+}
 
-class PokeLoading extends PokeState {}
+class PokeLoading extends PokeState {
+  @override
+  List<Object> get props => [];
+}
 
 class PokeLoaded extends PokeState {
   final List<PokeModel> pokedata;
   const PokeLoaded({required this.pokedata});
 }
 
-class PokeError extends PokeState {}
+class PokeError extends PokeState {
+  @override
+  List<Object> get props => [];
+}
