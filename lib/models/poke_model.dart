@@ -5,6 +5,9 @@ class PokeModel {
   PokeModel({required this.name, required this.url});
 
   factory PokeModel.fromJson(Map<String, dynamic> json) {
-    return PokeModel(name: json['name'], url: json['url']);
+    return PokeModel(
+      name: json['name'],
+      url: json['url'],
+    );
   }
 }

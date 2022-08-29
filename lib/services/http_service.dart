@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:pokedex/models/poke_model.dart';
 import 'package:http/http.dart' as http;
 
@@ -8,7 +7,7 @@ class HttpService {
     var result =
         await http.get(Uri.parse('https://pokeapi.co/api/v2/pokemon/'));
     if (result.statusCode == 200) {
-      List<dynamic> pokedata = (jsonDecode(result.body)['results'] as List);
+      List pokedata = jsonDecode(result.body)['results'];
       return pokedata.map((e) => PokeModel.fromJson(e)).toList();
     } else {
       throw Exception('Failed to load');
