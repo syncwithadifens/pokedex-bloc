@@ -14,7 +14,7 @@ class HomePage extends StatelessWidget {
           const Padding(
             padding: EdgeInsets.all(20),
             child: Text(
-              'All Pokemon Character',
+              'All Pokemon Character Name',
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
